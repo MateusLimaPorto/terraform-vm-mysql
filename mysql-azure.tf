@@ -174,7 +174,7 @@ output "public_ip_address_mysql" {
 }
 
 resource "azurerm_mysql_firewall_rule" "mysql-fw-rule" {
-    name                = "MySQL Office Access"
+    name                = "mysql-fw-rule"
     resource_group_name = azurerm_resource_group.resgpmysqltest007.name
     server_name         = azurerm_mysql_server.mysqlservertest007.name
     start_ip_address    = "0.0.0.0"
@@ -184,19 +184,4 @@ resource "azurerm_mysql_firewall_rule" "mysql-fw-rule" {
 resource "time_sleep" "wait_30_seconds_db" {
   depends_on = [azurerm_linux_virtual_machine.vm_mysql]
   create_duration = "30s"
-}
-
-resource "null_resource" "uploaddb" {
-    provisioner "file" {
-        connection {
-            type = "ssh"
-            user = var.user
-            password = var.password
-            host = data.azurerm_public_ip.ip_aula_data_db.ip_address
-        }
-        source = "config"
-        destination = "/home/azureuser"
-    }
-
-    depends_on = [ time_sleep.wait_30_seconds_db ]
 }
