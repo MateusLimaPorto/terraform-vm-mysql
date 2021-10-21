@@ -1,7 +1,8 @@
 # terraform-mba
 
-Objetivo é criar um VM que tenha o mysql rodando na porta 3306
-Para acessar a base é necessário seguir os passos abaixo:
+## Objetivo é criar um VM que tenha o mysql rodando na porta 3306.
+
+### Para acessar a base é necessário seguir os passos abaixo:
 
 * Clonar o projeto
 * entrar na pasta do projeto
