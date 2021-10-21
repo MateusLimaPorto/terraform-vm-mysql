@@ -6,6 +6,7 @@
 
 * Clonar o projeto
 * entrar na pasta do projeto
+* executar no terminal os comandos a seguir.
 * terraform init
 * terraform apply (esperar o deploy finalizar)
 * mysql -h ip_publico_vm -u petclinic -P 3306 -p
