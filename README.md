@@ -1,13 +1,15 @@
-# terraform-mba
 
-## Objetivo é criar um VM que tenha o mysql rodando na porta 3306.
+## Installation
 
-### Para acessar a base é necessário seguir os passos abaixo:
+1 - Clone this repository.
+2 - Use "terraform init" command
+3 - Use "terraform apply -auto-approve" command (waits for the deploy to finish)
 
-* Clonar o projeto
-* entrar na pasta do projeto
-* executar no terminal os comandos a seguir.
-* terraform init
-* terraform apply (esperar o deploy finalizar)
-* mysql -h ip_publico_vm -u petclinic -P 3306 -p
-* o password é petclinic
+## How do I connect to the database?
+
+In your Workbench or other DBMS, put the following configuration:
+Server Host: IP returned in item 3
+Port: 3306
+Database: petclinic
+User: petclinic
+Password: petclinic
